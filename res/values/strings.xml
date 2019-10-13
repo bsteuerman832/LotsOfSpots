@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Virtual Parking Meter</string>
+    <string name="TAG">Displaying Permission rationale to provide additonal context.</string>
+</resources>

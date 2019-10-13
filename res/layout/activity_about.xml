@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#384079"
+    android:backgroundTint="#384079">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="327dp"
+        android:layout_height="533dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="32dp"
+        android:text="Welcome to LotsOfSpots! This app is intended to allow drivers to utilize certain parking lots where there spot is reserved in an
+online database where people can see the availability of parking lots for easier and less stressful parking. Register your car in the app using
+its license plate and registration number so that no one else to try and register it for their account. When you use of the
+select parking lots, you must log in to the app, select your lot and car, and check-in so the database can updates
+its information. When you must leave, you must do the same or the numbers online will be inaccurate. Any inaccuate numbers
+can be reported to a moderator on the home page under 'Contact Moderator'.\nFor more information, visit: https://github.com/bsteuerman832/Assignment-3/wiki"
+        android:textColor="#FFFFFF"
+        android:textSize="19sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
