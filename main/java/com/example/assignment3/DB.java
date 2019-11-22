@@ -130,6 +130,19 @@ public class DB {
     	}
    	 return objects;
      }
+
+    public ArrayList<Lot> getListLot(String key){
+        Gson gson = new Gson();
+
+        ArrayList<String> objStrings = getListString(key);
+        ArrayList<Lot> objects =  new ArrayList<Lot>();
+
+        for(String jObjString : objStrings){
+            Lot value = gson.fromJson(jObjString, Lot.class);
+            objects.add(value);
+        }
+        return objects;
+    }
     
 
     
@@ -257,6 +270,16 @@ public class DB {
     		objStrings.add(gson.toJson(obj));
     	}
     	putListString(key, objStrings);
+    }
+
+    public void putListLot(String key, ArrayList<Lot> objArray){
+        checkForNullKey(key);
+        Gson gson = new Gson();
+        ArrayList<String> objStrings = new ArrayList<String>();
+        for(Lot obj : objArray){
+            objStrings.add(gson.toJson(obj));
+        }
+        putListString(key, objStrings);
     }
     
     /**

@@ -7,6 +7,8 @@ public class Car
     private String make;
     private String model;
     private boolean checkedInToSpot;
+    private String lotParkedIn;
+    private int lotNumber;
 
 
     public Car(String license, String reg, String theMake, String theModel)
@@ -52,4 +54,20 @@ public class Car
         return checkedInToSpot;
     }
 
+    public void setLotParkedIn(String lotName)
+    {
+        lotParkedIn = lotName;
+    }
+
+    public String getLotParkedIn() {
+        return lotParkedIn;
+    }
+
+    public int getLotNumber() {
+        return lotNumber;
+    }
+
+    public void setLotNumber(int num) {
+        lotNumber = num;
+    }
 }

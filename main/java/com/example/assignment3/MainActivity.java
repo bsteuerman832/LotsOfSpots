@@ -7,12 +7,17 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
+import java.util.*;
+
 public class MainActivity extends AppCompatActivity {
     private static final int MY_PERMISSIONS_REQUEST_CALL_PHONE = 1;
+    Scanner scan = new Scanner(System.in);
+    DB db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         Button checkBtn = findViewById(R.id.checkBtn);
         Button aboutBtn = findViewById(R.id.aboutBtn);
         Button contactBtn = findViewById(R.id.contactBtn);
+        TextView lotCreator = findViewById(R.id.Copyright);
 
 
         contactBtn.setOnClickListener(new View.OnClickListener() {
@@ -55,4 +61,14 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(MainActivity.this, About.class));
     }
 
+    public void lotCreator(View v)
+    {
+        db = new DB(this);
+        ArrayList<Lot> lots = new ArrayList<Lot>();
+        lots.add(new Lot("Lot 1", "123 Main Street", 100, 5));
+        lots.add(new Lot("Lot 2", "17 Wood Street", 50, 17));
+        lots.add(new Lot("Lot 3", "172 Main Street", 75, 2));
+        System.out.println("Lots created");
+        db.putListLot("lots", lots);
+    }
 }
