@@ -57,16 +57,11 @@ public class Lot
         return false;
     }
 
-    public boolean checkOutCat(String licensePlate)
+    public boolean checkOutCar(int spotNum)
     {
-        int i = 0;
-        for (i = 0; i < size; i++)
-            if (spots[i].getLicensePlate().equals(licensePlate)) {
-                spots[i] = null;
-                carsParked = carsParked - 1;
-                return true;
-            }
-        return false;
+        spots[spotNum] = null;
+        carsParked = carsParked - 1;
+        return true;
     }
 
     public boolean isFull()

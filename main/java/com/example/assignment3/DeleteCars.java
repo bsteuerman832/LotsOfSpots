@@ -43,14 +43,14 @@ public class DeleteCars extends AppCompatActivity {
         while (!cars.get(i).getLicensePlate().toString().equals(selected))
             i++;
 
-        if (cars.get(i).getCheckInStatus() == true) // car is checked into a spot
+        if (cars.get(i).getCheckInStatus()) // car is checked into a spot already
             Toast.makeText(DeleteCars.this, "Car is checked in to spot. Cannot delete", Toast.LENGTH_LONG).show();
         else {
             cars.remove(i);
             tinydb.putListCar("cars", cars);
             Toast.makeText(DeleteCars.this, "Car With plate number " + selected + " deleted", Toast.LENGTH_LONG).show();
             startActivity(new Intent(DeleteCars.this, ManageCars.class));
-        }
+          }
     }
 
     public void onBack (View v)

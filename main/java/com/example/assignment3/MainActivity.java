@@ -53,7 +53,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onCheckBtn(View v) {
-        startActivity(new Intent(MainActivity.this, CheckInOut.class));
+        startActivity(new Intent(MainActivity.this, CheckIn.class));
+    }
+
+    public void onCheckOutBtn(View v)
+    {
+        startActivity(new Intent(MainActivity.this, CheckOut.class));
     }
 
     public void onAboutBtn(View v)
@@ -65,10 +70,18 @@ public class MainActivity extends AppCompatActivity {
     {
         db = new DB(this);
         ArrayList<Lot> lots = new ArrayList<Lot>();
-        lots.add(new Lot("Lot 1", "123 Main Street", 100, 5));
-        lots.add(new Lot("Lot 2", "17 Wood Street", 50, 17));
-        lots.add(new Lot("Lot 3", "172 Main Street", 75, 2));
+        lots.add(new Lot("Lot 1", "123 Main Street", 100, 1));
+        lots.add(new Lot("Lot 2", "17 Wood Street", 50, 4));
+        lots.add(new Lot("Lot 3", "172 Main Street", 75, 0.5));
+        lots.add(new Lot("Lot 4", "84 Maple Street", 75, 0.75));
         System.out.println("Lots created");
         db.putListLot("lots", lots);
+
+        // Because the lots are reset, all cars are checked out of all spots in all lots
+        ArrayList<Car> cars = db.getListCar("cars");
+        for (int i = 0; i < cars.size(); i++)
+            cars.get(i).checkOutOfSpot();
+
+        db.putListCar("cars", cars);
     }
 }

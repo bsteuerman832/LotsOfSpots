@@ -8,7 +8,7 @@ public class Car
     private String model;
     private boolean checkedInToSpot;
     private String lotParkedIn;
-    private int lotNumber;
+    private int spotNumber;
 
 
     public Car(String license, String reg, String theMake, String theModel)
@@ -18,6 +18,7 @@ public class Car
         make = theMake;
         model = theModel;
         checkedInToSpot = false;
+        spotNumber = -1;
     }
 
     public String getLicensePlate()
@@ -47,6 +48,8 @@ public class Car
     public void checkOutOfSpot()
     {
         checkedInToSpot = false;
+        lotParkedIn = null;
+        spotNumber = -1;
     }
 
     public boolean getCheckInStatus()
@@ -63,11 +66,11 @@ public class Car
         return lotParkedIn;
     }
 
-    public int getLotNumber() {
-        return lotNumber;
+    public int getSpotNumber() {
+        return spotNumber;
     }
 
-    public void setLotNumber(int num) {
-        lotNumber = num;
+    public void setSpotNumber(int num) {
+        spotNumber = num;
     }
 }
