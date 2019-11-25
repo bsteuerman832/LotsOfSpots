@@ -46,19 +46,24 @@ public class RegisterCars extends AppCompatActivity {
                 System.out.println("Car limit reached");
                 Toast.makeText(RegisterCars.this, "Car limit of 10 reached", Toast.LENGTH_LONG).show();
             } else
-                if (registration.equals(null) || license.equals(null) || make.equals(null) || model.equals(null)) {
-                    System.out.println("A field is blank");
-                    Toast.makeText(RegisterCars.this, "One or more of your text fields is blank.", Toast.LENGTH_LONG).show();
+                if (registration.length() < 10 || license.length() < 4 || make.length() < 3 || model.length() < 2) {
+                    System.out.println("One or more fields is blank or is insufficient");
+                    Toast.makeText(RegisterCars.this, "One or more fields is blank or is insufficient", Toast.LENGTH_LONG).show();
                 }
                 else
-                {
-                Car car = new Car(license, registration, make, model);
-                cars.add(car);
-                db.putListCar("cars", cars);
-                System.out.println("Car added");
-                Toast.makeText(RegisterCars.this, "Car information added", Toast.LENGTH_LONG).show();
-                startActivity(new Intent(RegisterCars.this, ManageCars.class));
-            }
+                    if (!license.matches("[a-zA-Z0-9]*") || !registration.matches("[a-zA-Z0-9]*"))
+                    {
+                        Toast.makeText(RegisterCars.this, "License plate number or Registration number has unwanted characters", Toast.LENGTH_LONG).show();
+                    }
+                    else
+                    {
+                    Car car = new Car(license, registration, make, model);
+                    cars.add(car);
+                    db.putListCar("cars", cars);
+                    System.out.println("Car added");
+                    Toast.makeText(RegisterCars.this, "Car information added", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(RegisterCars.this, ManageCars.class));
+                    }
         }
 
     }

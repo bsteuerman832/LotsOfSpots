@@ -15,15 +15,15 @@ import java.util.ArrayList;
 public class DeleteCars extends AppCompatActivity {
 
     Spinner spinner;
-    DB tinydb;
+    DB db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delete_cars);
-        tinydb = new DB(this);
+        db = new DB(this);
         Button subBtn = findViewById(R.id.subButton2);
         spinner = (Spinner) findViewById(R.id.deleteSpinner);
-        ArrayList<Car> cars = tinydb.getListCar("cars");
+        ArrayList<Car> cars = db.getListCar("cars");
         System.out.println("Cars: " + cars);
         String[] items = new String[cars.size()];
         int i = 0;
@@ -37,7 +37,7 @@ public class DeleteCars extends AppCompatActivity {
     {
         String selected = spinner.getSelectedItem().toString();
         selected = selected.substring(selected.indexOf('#') + 1).trim();
-        ArrayList<Car> cars = tinydb.getListCar("cars");
+        ArrayList<Car> cars = db.getListCar("cars");
         System.out.println("Cars: " + cars);
         int i = 0;
         while (!cars.get(i).getLicensePlate().toString().equals(selected))
@@ -47,7 +47,7 @@ public class DeleteCars extends AppCompatActivity {
             Toast.makeText(DeleteCars.this, "Car is checked in to spot. Cannot delete", Toast.LENGTH_LONG).show();
         else {
             cars.remove(i);
-            tinydb.putListCar("cars", cars);
+            db.putListCar("cars", cars);
             Toast.makeText(DeleteCars.this, "Car With plate number " + selected + " deleted", Toast.LENGTH_LONG).show();
             startActivity(new Intent(DeleteCars.this, ManageCars.class));
           }
