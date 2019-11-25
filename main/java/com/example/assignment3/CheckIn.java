@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
+// CheckIn
 public class CheckIn extends AppCompatActivity {
     private static final int REQUEST_LOCATION = 1;
     DB db;
