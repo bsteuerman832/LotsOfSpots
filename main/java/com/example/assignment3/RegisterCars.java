@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
+// reg cars
 public class RegisterCars extends AppCompatActivity {
 
     EditText regNumText, licenseNumText, makeText, modelText;

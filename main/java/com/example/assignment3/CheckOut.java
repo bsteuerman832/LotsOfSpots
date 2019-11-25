@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
+// Check Out class
 public class CheckOut extends AppCompatActivity {
     Spinner spinner;
     DB db;

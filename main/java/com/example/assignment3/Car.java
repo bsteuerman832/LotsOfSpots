@@ -1,5 +1,6 @@
 package com.example.assignment3;
 
+// car class
 public class Car
 {
     private String licensePlate;
