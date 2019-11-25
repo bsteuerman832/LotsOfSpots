@@ -7,6 +7,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+// Manage Cars
 public class ManageCars extends AppCompatActivity {
 
     @Override
