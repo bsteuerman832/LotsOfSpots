@@ -1,5 +1,6 @@
 package com.example.assignment3;
 
+// Lot Class
 public class Lot
 {
     private String name;
