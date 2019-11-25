@@ -14,6 +14,7 @@ import androidx.core.app.ActivityCompat;
 
 import java.util.*;
 
+// main activity
 public class MainActivity extends AppCompatActivity {
     private static final int MY_PERMISSIONS_REQUEST_CALL_PHONE = 1;
     Scanner scan = new Scanner(System.in);
