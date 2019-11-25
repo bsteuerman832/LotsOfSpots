@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
+// delete cars
 public class DeleteCars extends AppCompatActivity {
 
     Spinner spinner;
